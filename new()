@@ -1,0 +1,10 @@
+new() {
+ cd ~/kodzenie/
+ mkdir -p -- "$1"
+ cd "$1"
+ touch Makefile
+ echo all:  > Makefile
+ echo -e '\t' g++ -O3 -std=c++11 -Wno-unused-result -Wshadow -Wall -o "$1" "$1".cpp  >> Makefile
+ cp ~/.template.cpp "$1".cpp
+ subl "$1".cpp
+}
